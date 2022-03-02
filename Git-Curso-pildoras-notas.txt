@@ -1,0 +1,57 @@
+Directorio de Trabajo
+Imaginando que ya tenemos nuestros archivos de trabajo en un directorio. Ya teniendo este directorio para que GIT tenga un seguimiento
+de lo que hacemos en este directorio el primer comando que tenemos que saber es
+GIT INIT ~Este comando sólo se ejercuta una vez y es al comenzar nuestro proyecto o cuando queremos que GIT comience a hacer un seguimiento
+de nuestro proyecto.
+A git le puedes indicar que haga un seguimiento de archivos especificos de tu proyecto con el comando
+GIT ADD Con este comando logramos que git "lleve" nuestro archivo de nuestro directorio a la Área de Ensayo.
+GIT COMMIT Con este comando git traslada del área de ensayos al repositorio local que es dónde git toma la instantanea del archivo.
+
+Suponiendo que ya hemos escogido una carpeta para trabajar y la hayamos abierto desde la terminal y hayamos inicializado git con git init
+Podemos ver a que archivos git le está haciendo un seguimiento con el comando git status -s
+Al ejecutarlo los signos de interrogación rojos indicarán que git NO ESTÁ haciendoles un seguiiento pero si ejecutamos
+git ADD index.html
+
+Ahora git le está haciendo el seguimiento, lo podemos comprobar utilizando el comando git status -s. Ahora index tendrá en lugar del signo de
+interrogación una  color verde.
+
+Una vez agregado el archivo podemos crear la instantane
+git commit -m "Esta es una descripción opcional de los detalles de la modificación"
+
+Esto ya ha agregado index al repositorio.
+Cada vez que modifiquemos el archivo tendremos nuevamente que agregarlo al Área de ensayos y posteriormente llamar al comendo commit con
+la descripción del cambio.
+
+Para ver la lista de diferentes versiones que hemos creado utilizamos
+git log --oneline
+Para recuperar una versión anterior a una modificación utilizamos
+git reset --hard #codigoDelaversion.
+
+Subir repositorios a GitHub
+*Si buscamos que todos los archivos del proyecto sean considerados por git utilizamos el comando
+git add .
+
+*Si queremos utilizar add y commit en la misma linea podemos hacerlo con el comando
+git commit-am "Aqui va la descripción"
+
+vim nos permite editar el texto de la descripcion en la consola de git
+Para modificar la descripcion del commit
+git commit --amend
+Para comenzar a editar utilizamos el comando :i y despues enter
+sair del editor esc
+y para salir y guardar el comando :wq
+
+
+***********SUBIR A GITHUB****************
+Una vez registrados en github.com nos vamos a crear nuevo repository y colocamos nombre y descipción, etc
+Si todo va bien nos mandará a otra página de Quick set up
+Elegimos la opción de agegar un repositorio ya existente desde la linea de comandos
+git remote add origin https://github.com/JorgeMeza93/GitCurso01.git
+git branch -M main
+git push -u origin main
+
+copiamos: git remote add origin https://github.com/JorgeMeza93/GitCurso01.git y lo pegamos en la linea de comandos de bash
+
+
+
+
